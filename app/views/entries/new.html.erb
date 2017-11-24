@@ -1,1 +1,23 @@
 <p> This is where you create a new entry </p>
+
+<h1>Add a Definition</h1>
+
+<%= link_to("Back to Index", entries_url) %>
+
+<%= form_for(@entry) do |entry| %>
+  <p>
+    <%= entry.label :word %><br>
+    <%= entry.text_field :word %>
+  </p>
+  <p>
+    <%= entry.label :language %><br>
+    <%= entry.text_field :language %>
+  </p>
+  <p>
+    <%= entry.label :definition %><br>
+    <%= entry.text_area :definition %>
+  </p>
+  <p>
+    <%= entry.submit "Save" %>
+  </p>
+<% end %>

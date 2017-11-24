@@ -1,1 +1,8 @@
 <p>This page will display information about entry number <%= params[:id] %></p>
+
+<div class="entry">
+  <h3><%= @entry.word %></h3>
+  <p>Language: <%= @entry.language %></p>
+  <p>Definition: <%= @entry.definition %></p>
+  <%= link_to 'Back to Index', entries_url %>
+</div>

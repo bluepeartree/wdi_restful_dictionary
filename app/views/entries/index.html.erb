@@ -1,1 +1,6 @@
-<p>This is the entries index page</p>
+<h2>Dictionary Index</h2>
+
+<%@entries.each do |entry| %>
+<p>"<%= entry.word %>"
+<%= link_to "Definition", entry_path(entry) %></p>
+<% end%>
