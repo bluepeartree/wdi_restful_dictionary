@@ -1,0 +1,17 @@
+<%= form_for entry do |entry| %>
+  <p>
+    <%= entry.label :word %><br>
+    <%= entry.text_field :word %>
+  </p>
+  <p>
+    <%= entry.label :language %><br>
+    <%= entry.text_field :language %>
+  </p>
+  <p>
+    <%= entry.label :definition %><br>
+    <%= entry.text_area :definition %>
+  </p>
+  <p>
+    <%= entry.submit "Save" %>
+  </p>
+<% end %>

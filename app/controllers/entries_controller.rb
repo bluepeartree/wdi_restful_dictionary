@@ -33,14 +33,28 @@ def create
 end
 
 def edit
+  @entry = Entry.find(params[:id])
   render :edit
 end
 
 def update
-  redirect_to entry_url(params[:id])
+  @entry = Entry.find(params[:id])
+
+  @entry.word = params[:entry][:word]
+  @entry.language = params[:entry][:language]
+  @entry.definition = params[:entry][:definition]
+
+
+  if @entry.save
+    redirect_to entry_url(params[:id])
+  else
+    redirect_to entry_url(params[:id])
+  end
 end
 
 def destroy
+  @entry = Entry.find(params[:id])
+  @entry.destroy
   redirect_to ('/index')
 end
 

@@ -1,1 +1,3 @@
-<p>This page will let you edit entry number <%= params[:id] %></p>
+<h1>Editing <%= link_to @entry.word, entry_path(@entry) %></h1>
+
+<%= render 'entry_form', entry: @entry %>

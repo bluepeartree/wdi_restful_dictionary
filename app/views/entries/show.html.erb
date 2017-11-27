@@ -1,8 +1,16 @@
-<p>This page will display information about entry number <%= params[:id] %></p>
+<h1>Entry number <%= params[:id] %></h1>
 
 <div class="entry">
   <h3><%= @entry.word %></h3>
   <p>Language: <%= @entry.language %></p>
   <p>Definition: <%= @entry.definition %></p>
+
+  <p>
+  <%= link_to 'Edit', edit_entry_path %>
+  | <%= link_to 'Delete', entry_path(@entry), method: :delete, data: {confirm: "Are you sure you want to delete the entry '#{@entry.word}'? This cannot be undone!"} %>
+  </p>
+
+  <p>
   <%= link_to 'Back to Index', entries_url %>
+</p>
 </div>
